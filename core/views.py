@@ -35,7 +35,7 @@ class send_pass_change_email(APIView):
     def post(self, request):
         data = request.data
         subject = "DirtyBits | Password Change"
-        link = BASE_URL + "auth/changepass/" + data["code"] 
+        link = BASE_URL + "auth/resetpassword/" + data["code"] 
         # message = f"Hi {data['username']}, Thank You for registering with DirtyBits. \n\nTo activate your account please click on the link given below. \n{link} \n\nTeam DirtyBits @ 2021"
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [data["email"], ]
